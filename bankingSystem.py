@@ -54,7 +54,7 @@ if(userType == 1):
     else:
         print('Exit');
 else:
-    print('\n👤 Login as User')
+    print('\n Login as User')
     username = input("Enter your username: ")
 
     while True:
