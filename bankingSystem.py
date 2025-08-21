@@ -54,13 +54,40 @@ if(userType == 1):
     else:
         print('Exit');
 else:
-    print('Login as User');
-    print('1. View Account Details');
-    print('2. Check Account Balance');
-    print('3. Withdraw Money');
-    print('4. Deposit Money');
-    print('5. Transfer Money');
-    print('6. Change Pin');
-    print('7. Exit');
+    print('\n👤 Login as User')
+    username = input("Enter your username: ")
 
-    userChoice = int(input('Enter your choice: '));
+    while True:
+        print('\n User Menu')
+        print('1. View Account Details')
+        print('2. Check Account Balance')
+        print('3. Withdraw Money')
+        print('4. Deposit Money')
+        print('5. Transfer Money')
+        print('6. Change Pin')
+        print('7. Exit')
+
+        userChoice = int(input('Enter your choice: '))
+
+        if userChoice == 1:
+            viewUserDetails(username)
+        elif userChoice == 2:
+            checkBalance(username)
+        elif userChoice == 3:
+            amount = int(input("Enter amount to withdraw: "))
+            withdrawMoney(username, amount)
+        elif userChoice == 4:
+            amount = int(input("Enter amount to deposit: "))
+            depositMoney(username, amount)
+        elif userChoice == 5:
+            receiver = input("Enter receiver's username: ")
+            amount = int(input("Enter amount to transfer: "))
+            transferMoney(username, receiver, amount)
+        elif userChoice == 6:
+            newPin = int(input("Enter new PIN: "))
+            changePin(username, newPin)
+        elif userChoice == 7:
+            print("Goodbye!")
+            break
+        else:
+            print("Invalid choice. Please try again.")
